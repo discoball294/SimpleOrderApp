@@ -37,7 +37,7 @@
                 <input class="with-gap" name="group1" type="radio" id="test2" value="penjual" />
                 <label for="test2">Penjual</label>
             </p>
-            <button class="btn waves-effect waves-light deep-orange darken-2" type="submit" name="action">Submit
+            <button class="btn waves-effect waves-light deep-orange darken-2" type="submit" name="action">Login
             </button>
         </form>
     </div>
