@@ -16,7 +16,7 @@ $rowMenu = $dataMenu->fetch_assoc(); ?>
 <link href="css/ghpages-materialize.css" rel="stylesheet" type="text/css">
 <nav>
     <div class="nav-wrapper deep-orange darken-2">
-        <a href="#" class="brand-logo">Menu</a>
+        <a href="#" class="brand-logo">Pesanan</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href=""><?echo $_SESSION['nama'].", Saldo anda Rp.".$_SESSION['saldo'];?></a></li>
             <li><a href="tampilMenu.php">Lihat Menu</a></li>
@@ -45,7 +45,7 @@ $rowMenu = $dataMenu->fetch_assoc(); ?>
                 echo "<td><div class='form-group'><input readonly class='form-control' name='harga[]' size='6' value='" . $rowMenu['nama_menu'] . "'></div></td>";
                 echo "<td><div class='form-group'><input readonly class='form-control' name='stok[]' size='2' value='" . $rowMenu['harga'] . "'></div></td>";
                 echo "<td><div class='form-group'><input readonly class='form-control' name='stok[]' size='2' value='" . $rowMenu['jumlah'] . "'></div></td>";
-                echo "<td><div class='form-group'><input readonly class='form-control' name='stok[]' size='2' value='" . $rowMenu['status'] . "'></div></td>";
+                echo "<td><div class='form-group'><input readonly class='form-control text-danger' name='stok[]' size='2' value='" . $rowMenu['status'] . "'></div></td>";
                 echo "</tbody>";
             } ?></table>
         <button class="btn btn-large waves-effect waves-light deep-orange darken-2" type="submit" name="action">Submit

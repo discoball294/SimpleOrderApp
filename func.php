@@ -84,11 +84,12 @@ alert('Username tidak ada atau password salah');
 window.location.href='indexdummy.php';
 </script>";
 }
+
 function addDep($nim, $jml)
 {
     global $db;
-    $dtl = "UPDATE user_mhs SET deposit='$jml' WHERE nim='$nim'";
-    $db->query($dtl) or die("<script>
+    $upd = "UPDATE user_mhs SET deposit='$jml' WHERE nim='$nim'";
+    $db->query($upd) or die("<script>
 alert('Terjadi kesalahan '" . $db->error() . "'');
 window.location.href='index.php';
 </script>");
@@ -96,4 +97,51 @@ window.location.href='index.php';
 alert('Berhasil tambah deposit');
 window.location.href='#';
 </script>";
+}
+
+function updStatus($id_pesanan)
+{
+    global $db;
+    $upd = "UPDATE detail_pesanan SET status='Siap' WHERE id_pesanan='$id_pesanan'";
+    $db->query($upd) or die("<script>
+alert('Terjadi kesalahan '" . $db->error() . "'');
+window.location.href='index.php';
+</script>");
+}
+
+function cari($id_pesanan)
+{
+    global $db;
+    if (isset($id_pesanan) == false) {
+        $query = "SELECT * FROM status_fix WHERE status LIKE '%Proses%' ORDER BY id_pesanan ASC";
+        $dataMenu = $db->query($query);
+        $rowMenu = $dataMenu->fetch_assoc();
+    } else {
+        $query = "SELECT * FROM status_fix WHERE id_pesanan LIKE '%" . $id_pesanan . "%' AND status LIKE '%Proses%'";
+        $dataMenu = $db->query($query);
+        $rowMenu = $dataMenu->fetch_assoc();
+    }
+    ?>
+    <form method="post" action="">
+    <table border="1" class="table table-responsive table-striped ">
+        <thead>
+        <th>ID Pesanan</th>
+        <th>Nama</th>
+        <th>Nama Menu</th>
+        <th>Harga</th>
+        <th>Jumlah</th>
+        <th>Status</th>
+        </thead>
+        <?
+        foreach ($dataMenu as $rowMenu) {
+            echo "<tbody>";
+            echo "<td><div class='form-group'><input readonly class='form-control' name='idmenu' size='7' value='" . $rowMenu['id_pesanan'] . "'></div></td>";
+            echo "<td>" . $rowMenu['nama'] . "</td>";
+            echo "<td><div class='form-group'><input readonly class='form-control' name='harga[]' size='6' value='" . $rowMenu['nama_menu'] . "'></div></td>";
+            echo "<td><div class='form-group'><input readonly class='form-control' name='stok[]' size='2' value='" . $rowMenu['harga'] . "'></div></td>";
+            echo "<td><div class='form-group'><input readonly class='form-control' name='stok[]' size='2' value='" . $rowMenu['jumlah'] . "'></div></td>";
+            echo "<td><div class='form-group'><input readonly class='form-control text-danger' name='stok[]' size='2' value='" . $rowMenu['status'] . "'></div></td>";
+            echo "</tbody>";
+        } ?></table>
+<?
 }

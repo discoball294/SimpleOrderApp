@@ -7,7 +7,7 @@
  */
 require_once"func.php";
 ?>
-<title>Menu</title>
+<title>Tambah Deposit</title>
 <link href="css/materialize.min.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/ghpages-materialize.css" rel="stylesheet" type="text/css">
