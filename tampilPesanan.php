@@ -14,20 +14,13 @@ $rowMenu = $dataMenu->fetch_assoc(); ?>
 <link href="css/materialize.min.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/ghpages-materialize.css" rel="stylesheet" type="text/css">
-<ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three</a></li>
-</ul>
 <nav>
     <div class="nav-wrapper deep-orange darken-2">
         <a href="#" class="brand-logo">Menu</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href=""><?echo $_SESSION['user'];?></a></li>
+            <li><a href=""><?echo $_SESSION['nama'];?></a></li>
             <li><a href="tampilMenu.php">Lihat Menu</a></li>
-            <li><a class="dropdown-bu" href="#!" data-activates="dropdown1">Dropdown</a></li>
-        </ul>
+            <li><a href="logout.php">Logout</a></li>        </ul>
     </div>
 </nav>
 
