@@ -27,19 +27,17 @@ if(isset($_POST["qty"])){
             $capture_field_vals .= "0, ";
         }
         else{
-
-            $capture_field_vals .= $text_field .", ";
-            $ecArr .= $key.",";
             //$totalQty += $_POST['qty'][$key];
             $total += ($_POST['harga'][$key]*$_POST['qty'][$key]);
-            echo $_POST['idmenu'][$key]."<br> ";
             insDetail($idTrans,$_POST['idmenu'][$key],$_POST['qty'][$key]);
         }
     }
     $deposit=$_SESSION['saldo']-$total;
-    echo "value key terisi: ".$ecArr."<br>";
-    echo "Isi text qty: ".$capture_field_vals."<br>";
     updPesanan($total,$idTrans);
     addDep($_SESSION['user'],$deposit);
     $_SESSION['saldo']=$deposit;
+    echo"<script>
+alert('Terjadi kesalahan');
+window.location.href='tampilMenu.php';
+</script>";
 }

@@ -15,8 +15,9 @@ require_once"func.php";
     <div class="nav-wrapper deep-orange darken-2">
         <a href="#" class="brand-logo">Tambah Deposit</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href=""><?//echo $_SESSION['nama'];?></a></li>
-            <li><a href="tampilPesanan.php">Lihat Pesanan</a></li>
+            <li class="active"><a href="addDeposit.php">Tambah Deposit</a></li>
+            <li><a href="tambahMenu.php">Tambah Menu</a></li>
+            <li><a href="tampilMenuPenjual.php">Lihat Pesanan</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
     </div>

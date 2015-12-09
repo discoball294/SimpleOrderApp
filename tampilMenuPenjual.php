@@ -6,8 +6,9 @@
     <div class="nav-wrapper deep-orange darken-2">
         <a href="#" class="brand-logo">Pesanan</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href=""><? //echo $_SESSION['nama'].", Saldo anda Rp.".$_SESSION['saldo'];?></a></li>
-            <li><a href="tampilMenu.php">Lihat Menu</a></li>
+            <li><a href="addDeposit.php">Tambah Deposit</a></li>
+            <li><a href="tambahMenu.php">Tambah Menu</a></li>
+            <li class="active"><a href="tampilMenuPenjual.php">Lihat Pesanan</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
     </div>

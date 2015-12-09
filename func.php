@@ -75,7 +75,7 @@ function loginPenjual($user, $pass)
     if ($sukses == 1) {
         echo "<script>
 alert('Berhasil Login');
-window.location.href='tampilMenu.php';
+window.location.href='tampilMenuPenjual.php';
 </script>";
 
     } else
@@ -93,10 +93,10 @@ function addDep($nim, $jml)
 alert('Terjadi kesalahan '" . $db->error() . "'');
 window.location.href='index.php';
 </script>");
-    echo "<script>
-alert('Berhasil tambah deposit');
-window.location.href='#';
-</script>";
+    echo "<div class='alert alert-success alert-dismissible' role='alert'>
+  <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+  <strong>Berhasil</strong>
+</div>";
 }
 
 function updStatus($id_pesanan)
@@ -144,4 +144,17 @@ function cari($id_pesanan)
             echo "</tbody>";
         } ?></table>
 <?
+}
+function insMenu($id_menu, $nama_menu, $harga)
+{
+    global $db;
+    $dtl = "INSERT INTO menu VALUES ('" . $id_menu . "','" . $nama_menu . "','" . $harga . "')";
+    $db->query($dtl) or die("<script>
+alert('Terjadi kesalahan');
+window.location.href='index.php';
+</script>");
+    echo "<div class='alert alert-success alert-dismissible' role='alert'>
+  <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+  <strong>Sukses!</strong> Tambah data berhasil
+</div>";
 }

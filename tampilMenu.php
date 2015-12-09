@@ -33,7 +33,6 @@ $rowMenu = $dataMenu->fetch_assoc(); ?>
     <th>ID Menu</th>
     <th>Menu</th>
     <th>Harga</th>
-    <th>Stok</th>
     <th>Jumlah</th>
     </thead>
     <?
@@ -42,7 +41,6 @@ $rowMenu = $dataMenu->fetch_assoc(); ?>
         echo "<td><div class='form-group'><input readonly class='form-control' name='idmenu[]' size='7' value='" . $rowMenu['id_menu'] . "'></div></td>";
         echo "<td>" . $rowMenu['nama_menu'] . "</td>";
         echo "<td><div class='form-group'><input readonly class='form-control' name='harga[]' size='6' value='" . $rowMenu['harga'] . "'></div></td>";
-        echo "<td><div class='form-group'><input readonly class='form-control' name='stok[]' size='2' value='" . $rowMenu['stok'] . "'></div></td>";
         echo "<td><input type='text' name='qty[]' size='3'></td>";
         echo "</tbody>";
     } ?></table>

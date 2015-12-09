@@ -27,6 +27,7 @@ $rowMenu = $dataMenu->fetch_assoc(); ?>
 
 <div class="col-md-3"></div>
 <div class="col-md-6">
+
     <form method="post" action="prosesPesan.php">
         <table border="1" class="table table-responsive table-striped ">
             <thead>
@@ -48,7 +49,6 @@ $rowMenu = $dataMenu->fetch_assoc(); ?>
                 echo "<td><div class='form-group'><input readonly class='form-control text-danger' name='stok[]' size='2' value='" . $rowMenu['status'] . "'></div></td>";
                 echo "</tbody>";
             } ?></table>
-        <button class="btn btn-large waves-effect waves-light deep-orange darken-2" type="submit" name="action">Submit
-        </button></div>
+        </div>
 <script src="js/materialize.min.js" type="application/javascript"></script>
 <script src="js/jquery-2.1.4.min.js" type="application/javascript"></script>
