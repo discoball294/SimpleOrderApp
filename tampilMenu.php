@@ -14,22 +14,23 @@ $rowMenu = $dataMenu->fetch_assoc(); ?>
 <link href="css/materialize.min.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/ghpages-materialize.css" rel="stylesheet" type="text/css">
-<nav class="top-nav deep-orange darken-2">
-    <div class="container">
-        <div class="nav-wrapper">
-            <a href="#" class="page-title">Menu</a>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#">Lihat Pesanan</a>
-                </li>
-                <li>
-                    <a href="logout.php"><? echo $_SESSION['user'];?>Logout</a>
-                </li>
-            </ul>
-
-        </div>
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+</ul>
+<nav>
+    <div class="nav-wrapper deep-orange darken-2">
+        <a href="#" class="brand-logo">Menu</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href=""><?echo $_SESSION['user'];?></a></li>
+            <li><a href="">Lihat Pesanan</a></li>
+            <li><a class="dropdown-bu" href="#!" data-activates="dropdown1">Dropdown</a></li>
+        </ul>
     </div>
 </nav>
+
 <div class="col-md-3"></div>
 <div class="col-md-6">
 <form method="post" action="prosesPesan.php">
@@ -51,4 +52,7 @@ $rowMenu = $dataMenu->fetch_assoc(); ?>
         echo "<td><input type='text' name='qty[]' size='3'></td>";
         echo "</tbody>";
     } ?></table>
-<input type="submit" value="pesan" class="btn-flat btn-large"></form></div>
+    <button class="btn btn-large waves-effect waves-light deep-orange darken-2" type="submit" name="action">Submit
+    </button></div>
+<script src="js/materialize.min.js" type="application/javascript"></script>
+<script src="js/jquery-2.1.4.min.js" type="application/javascript"></script>

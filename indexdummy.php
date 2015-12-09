@@ -20,13 +20,13 @@
             <div class="row">
                 <div class="input-field col s6">
                     <input name="user" placeholder="Username" type="text" class="validate" required>
-                    <label class="active">Username</label>
+                    <label class="active deep-orange-text">Username</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
                     <input name="pass" type="password" class="validate waves-input-wrapper" required>
-                    <label class="active">Password</label>
+                    <label class="active deep-orange-text">Password</label>
                 </div>
             </div>
             <p>
@@ -37,16 +37,14 @@
                 <input class="with-gap" name="group1" type="radio" id="test2" value="penjual" />
                 <label for="test2">Penjual</label>
             </p>
-            <div class="row">
-                <input type="submit" value="Login" class="btn-flat btn-large waves-effect waves-ripple">
-            </div>
+            <button class="btn waves-effect waves-light deep-orange darken-2" type="submit" name="action">Submit
+            </button>
         </form>
     </div>
     <div class="row col s3"></div>
 </div>
 <script src="js/materialize.min.js" type="application/javascript"></script>
-<script src="js/jquery.js" type="application/javascript"></script>
-<script src="js/jquery-2.js" type="application/javascript"></script>
+<script src="js/jquery-2.1.4.min.js" type="application/javascript"></script>
 
 
 </body>
