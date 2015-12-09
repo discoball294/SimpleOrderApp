@@ -40,6 +40,7 @@ function loginMhs($nim, $pass)
             session_start();
             $_SESSION['user'] = $row['nim'];
             $_SESSION['nama'] = $row['nama'];
+            $_SESSION['saldo'] = $row['deposit'];
         }
     }
     if ($sukses == 1) {
@@ -81,5 +82,18 @@ window.location.href='tampilMenu.php';
         echo "<script>
 alert('Username tidak ada atau password salah');
 window.location.href='indexdummy.php';
+</script>";
+}
+function addDep($nim, $jml)
+{
+    global $db;
+    $dtl = "UPDATE user_mhs SET deposit='$jml' WHERE nim='$nim'";
+    $db->query($dtl) or die("<script>
+alert('Terjadi kesalahan '" . $db->error() . "'');
+window.location.href='index.php';
+</script>");
+    echo "<script>
+alert('Berhasil tambah deposit');
+window.location.href='#';
 </script>";
 }

@@ -18,9 +18,10 @@ $rowMenu = $dataMenu->fetch_assoc(); ?>
     <div class="nav-wrapper deep-orange darken-2">
         <a href="#" class="brand-logo">Menu</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href=""><?echo $_SESSION['nama'];?></a></li>
+            <li><a href=""><?echo $_SESSION['nama'].", Saldo anda Rp.".$_SESSION['saldo'];?></a></li>
             <li><a href="tampilMenu.php">Lihat Menu</a></li>
-            <li><a href="logout.php">Logout</a></li>        </ul>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
     </div>
 </nav>
 

@@ -36,7 +36,10 @@ if(isset($_POST["qty"])){
             insDetail($idTrans,$_POST['idmenu'][$key],$_POST['qty'][$key]);
         }
     }
+    $deposit=$_SESSION['saldo']-$total;
     echo "value key terisi: ".$ecArr."<br>";
     echo "Isi text qty: ".$capture_field_vals."<br>";
     updPesanan($total,$idTrans);
+    addDep($_SESSION['user'],$deposit);
+    $_SESSION['saldo']=$deposit;
 }
