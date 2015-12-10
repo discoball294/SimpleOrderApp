@@ -52,7 +52,7 @@ window.location.href='tampilMenu.php';
     } else
         echo "<script>
 alert('Username tidak ada atau password salah');
-window.location.href='indexdummy.php';
+window.location.href='index.php';
 </script>";
 }
 
@@ -81,7 +81,7 @@ window.location.href='tampilMenuPenjual.php';
     } else
         echo "<script>
 alert('Username tidak ada atau password salah');
-window.location.href='indexdummy.php';
+window.location.href='index.php';
 </script>";
 }
 
